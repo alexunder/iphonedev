@@ -1,0 +1,36 @@
+//imineBoardView.m
+#import "imineBoardView.h"
+
+@implementation BoardView
+
+- (id)initWithFrame:(CGRect)rect
+{
+	self = [ super initWithFrame: rect ];
+
+	if( self != nil )
+	{
+		NSString* imagePath = [[NSBundle mainBundle] pathForResource:@"icon" ofType:@"png"];
+		imgObj = [[UIImage alloc] initWithContentsOfFile:imagePath];
+	}
+}
+
+
+- (void)drawRect:(CGRect)rect
+{
+	/*
+	NSString *hello  = @"Fuck, World!";
+	CGPoint location = CGPointMake(10, 20);
+	UIFont * font    = [UIFont systemFontOfSize:24];
+	[[UIColor redColor] set];
+	[hello drawAtPoint:location withFont:font];
+	*/
+	// Draw the image
+	[imgObj drawAtPoint:CGPointMake(10, 10)];
+}
+
+- (void)dealloc
+{
+	[super dealloc];
+}
+
+@end
